@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign up</title>
 </head>
 <body>
     <link rel="stylesheet" type="css/stylesheet" href="style.css">
     <h1>Sign up!</h1>
     <form action="/user/add" method="post">
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
-    <input type="submit" value="OK">
-</form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required="required">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required="required">
+        <label for="yeargroup">Year group:</label>
+        <input type="yeargroup" id="yeargroup" name="yeargroup" required="yeargroup">
+        <input type="submit" value="OK">
+    </form>
+Or <a href="signin">Sign in</a>
 </body>
 </html>
