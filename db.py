@@ -54,3 +54,20 @@ def delete_user(username):
     DELETE FROM accounts WHERE username={username}
     """
     c.execute(delete_statement)
+
+def user_details(username):
+    conn = sqlite3.connect("database.db")
+    c = conn.cursor()
+    detail_statement = f"""
+    SELECT username, yeargroup FROM accounts where username = '{username}'
+    """
+    c.execute(detail_statement)
+    return c.fetchone()
+
+def update_user(username, password, yeargroup):
+    conn = sqlite3.connect("database.db")
+    c = conn.cursor()
+    update_statement = f"""
+        UPDATE yeargroup SET password = '{password}', yeargroup = '{yeargroup}', WHERE username = '{username}'
+        """
+    c.execute(update_statement)
